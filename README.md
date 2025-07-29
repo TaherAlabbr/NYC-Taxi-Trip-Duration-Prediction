@@ -83,6 +83,18 @@ NYC-Taxi-Trip-Duration/
 
 ---
 
+## 🛠️ Installation
+
+To install all required dependencies, run:
+
+```bash
+pip install -r requirements.txt
+```
+
+Make sure you're using **Python 3.9 or later** for full compatibility.
+
+---
+
 ## 📬 Contact
 
 **Author:** Taher Alabbar  
