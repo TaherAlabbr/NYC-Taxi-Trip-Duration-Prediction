@@ -65,16 +65,20 @@ The full report offers a comprehensive breakdown of:
 ## 📂 Project Structure
 
 ```
-NYC-Taxi-Duration-Prediction/
+NYC-Taxi-Trip-Duration/
 │
-├── nyc_taxi_analysis.ipynb           # Main notebook with EDA, FE, modeling
-├── project_report.pdf                # Full detailed write-up
+├── trip_duration.ipynb                   # Jupyter notebook with EDA + modeling
+├── project_report.pdf                    # Full write-up and analysis
 │
-├── data_preprocessing.py            # Functions for IQR filtering, encoding
-├── feature_engineering.py           # Spatial and temporal feature construction
-├── model_training.py                # Ridge Regression training & evaluation
+├── trip_duration_train.py                # Script to train the Ridge Regression model
+├── trip_duration_test.py                 # Script to evaluate model performance
 │
-└── plots/                           # EDA and feature visualization outputs
+├── trip_duration_utils_data.py           # Data loading and splitting logic
+├── trip_duration_utils_preprocess.py     # Preprocessing steps: scaling, encoding, IQR
+├── trip_duration_utils_eval.py           # Evaluation metrics and plotting
+├── cli_args.py                           # CLI argument parsing for scripts
+│
+└── saved_models/                         # Folder for serialized model outputs
 ```
 
 ---
