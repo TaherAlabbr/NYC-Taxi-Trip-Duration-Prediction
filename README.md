@@ -85,8 +85,8 @@ NYC-Taxi-Trip-Duration/
 
 ## 📬 Contact
 
-**Author:** Taher Alabbar
-**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)
+**Author:** Taher Alabbar 
+**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com) 
 [**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
 
 Feel free to connect, collaborate, or ask any questions!
