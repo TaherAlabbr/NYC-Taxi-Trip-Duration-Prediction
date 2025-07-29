@@ -21,7 +21,7 @@ The dataset includes detailed information about taxi rides in NYC, such as times
 
   * Haversine-based `trip_distance` and interaction terms
   * `latitude_sum`, `longitude_sum` to simplify spatial encoding
-  * 
+    
 * Conducted **IQR-based outlier removal** and tuned strictness parameter `k` using validation R² performance.
 * Ensured **data leakage prevention** by computing thresholds from the training set only.
 * Achieved R² score of **0.68688** on validation set using only Ridge Regression.
