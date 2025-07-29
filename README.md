@@ -21,7 +21,7 @@ The dataset includes detailed information about taxi rides in NYC, such as times
 
   * Haversine-based `trip_distance` and interaction terms
   * `latitude_sum`, `longitude_sum` to simplify spatial encoding
-  * Time-of-day, day-of-week, seasonal flags
+  * 
 * Conducted **IQR-based outlier removal** and tuned strictness parameter `k` using validation R² performance.
 * Ensured **data leakage prevention** by computing thresholds from the training set only.
 * Achieved R² score of **0.68688** on validation set using only Ridge Regression.
@@ -50,18 +50,6 @@ The full report offers a comprehensive breakdown of:
 👉 [**Review Full Report (PDF)**](project_report.pdf)
 
 ---
-
-## 🧰 Tools and Technologies
-
-* Python 3.9+
-* scikit-learn (for Ridge Regression, scaling, encoding, metrics)
-* numpy, pandas (for data handling and preprocessing)
-* matplotlib, seaborn (for EDA visualizations)
-* datetime (for temporal feature engineering)
-* haversine (custom function for spatial distance calculation)
-
----
-
 ## 📂 Project Structure
 ```
 NYC-Taxi-Trip-Duration/
@@ -82,8 +70,6 @@ NYC-Taxi-Trip-Duration/
 └── saved_models/
 
 ```
-
-
 ---
 
 ## 🛠️ Installation
@@ -95,6 +81,17 @@ pip install -r requirements.txt
 ```
 
 Make sure you're using **Python 3.9 or later** for full compatibility.
+
+---
+
+## 🧰 Tools and Technologies
+
+* Python 3.9+
+* scikit-learn (for Ridge Regression, scaling, encoding, metrics)
+* numpy, pandas (for data handling and preprocessing)
+* matplotlib, seaborn (for EDA visualizations)
+* datetime (for temporal feature engineering)
+* haversine (custom function for spatial distance calculation)
 
 ---
 
