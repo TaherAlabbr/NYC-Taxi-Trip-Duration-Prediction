@@ -1,7 +1,3 @@
-Here’s a matching, professional `README.md` file for your **NYC Taxi Trip Duration Prediction** project—styled just like your fraud detection one:
-
----
-
 # 🚖 NYC Taxi Trip Duration Prediction: A Feature Engineering-Centric Approach
 
 This project predicts the duration of taxi trips in New York City using supervised machine learning, with a **strong emphasis on feature engineering**. A single, interpretable model—**Ridge Regression (α = 1)**—is used throughout to highlight the impact of each transformation and engineered feature.
