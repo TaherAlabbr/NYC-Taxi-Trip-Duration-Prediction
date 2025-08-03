@@ -233,15 +233,12 @@ python scripts/train/trip_duration_train.py --model XGB --use-stacking --scaling
 * FastAPI (API deployment)
 
 ---
-Thanks for sharing your API code! It's clear and well-structured. Based on it, here's a ready-to-use **API usage section** you can add to your `README.md` to document how others can interact with your `/predict/` endpoint, including the request schema, an example request, and what to expect in the response:
-
----
 
 ## 🚀 API Deployment
 
 A RESTful API is provided to serve model predictions using the final XGBoost model.
 
-### 🔧 Running the API Locally
+### Running the API Locally
 
 ```bash
 python api/predict_api.py
