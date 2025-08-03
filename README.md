@@ -150,6 +150,77 @@ All models and preprocessing steps are version-locked for reproducibility.
 
 ---
 
+## Command-Line Interface (CLI)
+
+This project includes a fully configurable command-line interface using `argparse`, enabling flexible training, tuning, and deployment.
+
+### Available Arguments
+
+#### File Paths
+
+| Argument       | Description                                            |
+| -------------- | ------------------------------------------------------ |
+| `--train_dir`  | Path to the training dataset CSV file                  |
+| `--test_dir`   | Path to the testing dataset CSV file                   |
+| `--save-dir`   | Directory to save the trained model                    |
+| `--load-dir`   | Path to load a saved model for inference               |
+| `--model-name` | Name of the saved model file (e.g., `ridge_model.pkl`) |
+
+#### Model Selection
+
+| Argument          | Description                                                               |
+| ----------------- | ------------------------------------------------------------------------- |
+| `--model`         | Select the model: `RR` (Ridge), `XGB` (XGBoost), or `NN` (Neural Network) |
+| `--use-stacking`  | Enable stacked ensemble using Ridge, XGBoost, and Neural Network          |
+| `--random-search` | Use `RandomizedSearchCV` for hyperparameter tuning                        |
+
+#### Preprocessing
+
+| Argument                 | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `--categorical-features` | List of categorical features to one-hot encode            |
+| `--scaling`              | Scaling method: `standard`, `robust`, or `minmax`         |
+| `--iqr-multiplier`       | IQR threshold multiplier for outlier removal (default: 8) |
+
+#### Ridge Regression Parameters
+
+| Argument           | Description                        |
+| ------------------ | ---------------------------------- |
+| `--ridge-alpha`    | Regularization strength (α)        |
+| `--ridge-max-iter` | Maximum iterations (default: None) |
+
+#### XGBoost Parameters
+
+| Argument              | Description               |
+| --------------------- | ------------------------- |
+| `--xgb-n-estimators`  | Number of boosting rounds |
+| `--xgb-max-depth`     | Maximum tree depth        |
+| `--xgb-learning-rate` | Learning rate (eta)       |
+
+#### Neural Network Parameters
+
+| Argument             | Description                                        |
+| -------------------- | -------------------------------------------------- |
+| `--nn-hidden-layers` | Comma-separated hidden layer sizes (e.g., `64,32`) |
+| `--nn-max-iter`      | Maximum training iterations                        |
+| `--nn-activation`    | Activation function: `relu`, `tanh`, or `logistic` |
+| `--nn-lr`            | Learning rate                                      |
+
+### Examples
+
+Train a Ridge Regression model with default preprocessing:
+
+```bash
+python scripts/train/trip_duration_train.py --model RR
+```
+
+Train a tuned XGBoost model using RobustScaler and stacking:
+
+```bash
+python scripts/train/trip_duration_train.py --model XGB --use-stacking --scaling robust --random-search
+```
+---
+
 ## Tools and Technologies
 
 * Python, pandas, NumPy, datetime
