@@ -30,14 +30,13 @@ This project is structured into two main parts:
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 The dataset includes detailed records of NYC taxi trips with attributes such as timestamps, coordinates, and passenger count.
 
 * **Target:** `trip_duration` (in seconds)
 * **Features include:**
 
-  * `pickup_datetime`, `dropoff_datetime`
   * `pickup_latitude`, `pickup_longitude`
   * `dropoff_latitude`, `dropoff_longitude`
   * `passenger_count`, `vendor_id`, and more
