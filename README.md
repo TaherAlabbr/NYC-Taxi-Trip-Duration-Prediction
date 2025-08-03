@@ -4,7 +4,7 @@ This project predicts the duration of taxi trips in New York City using supervis
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project is structured into two main parts:
 
