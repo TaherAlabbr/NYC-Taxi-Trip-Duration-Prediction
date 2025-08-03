@@ -105,7 +105,7 @@ NYC-Taxi-Trip-Duration-Prediction/
 ├── api/                         # API for model prediction
 │   └── predict_api.py
 ├── saved_models/                # Saved models (final model excluded due to size)
-│   └── final-xgb.pkl            #(can be reproduced via CLI)
+│   └── final-xgb.pkl          
 ├── requirements.txt             # Dependencies
 └── README.md                   # Project overview and instructions
 
