@@ -103,7 +103,7 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 For in-depth insights including methodology, feature details, visualizations, and model comparison:
 
-👉 [**Read Full Report (PDF)**](reports/project_report.pdf)
+👉 [**Read Full Report (PDF)**](reports/Project_Report.pdf)
 
 ---
 
