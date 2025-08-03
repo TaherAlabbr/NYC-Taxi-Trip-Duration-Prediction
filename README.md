@@ -103,7 +103,7 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 For in-depth insights including methodology, feature details, visualizations, and model comparison:
 
-👉 [**Read Full Report (PDF)**](reports\project_report.pdf)
+👉 [**Read Full Report (PDF)**](reports/project_report.pdf)
 
 ---
 
@@ -248,7 +248,7 @@ python scripts/train/trip_duration_train.py --model XGB --use-stacking --scaling
 
 ---
 
-## 🚀 API Deployment
+## API Deployment
 
 A RESTful API is provided to serve model predictions using the final XGBoost model.
 
