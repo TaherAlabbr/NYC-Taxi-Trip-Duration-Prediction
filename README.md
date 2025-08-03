@@ -27,7 +27,8 @@ This project is structured into two main parts:
 * Conducted **RandomizedSearchCV** for hyperparameter tuning (e.g., `max_depth=13`, `n_estimators=137` for XGBoost).
 * **XGBoost** outperformed all other models and was selected for production due to its strong generalization and interpretability.
 * A lightweight **API** was developed to serve real-time predictions using the best-performing model.
-
+* A comprehensive **command-line interface (CLI)** is provided for flexible training, tuning, and deployment of all models in the project.
+  
 ---
 
 ## Dataset
@@ -232,18 +233,87 @@ python scripts/train/trip_duration_train.py --model XGB --use-stacking --scaling
 * FastAPI (API deployment)
 
 ---
+Thanks for sharing your API code! It's clear and well-structured. Based on it, here's a ready-to-use **API usage section** you can add to your `README.md` to document how others can interact with your `/predict/` endpoint, including the request schema, an example request, and what to expect in the response:
 
-## API Deployment
+---
 
-A RESTful API is provided to serve model predictions:
+## 🚀 API Deployment
+
+A RESTful API is provided to serve model predictions using the final XGBoost model.
+
+### 🔧 Running the API Locally
 
 ```bash
-python scripts/api/predict_api.py
+python api/predict_api.py
 ```
 
-* Accepts pickup time, location, and trip features
-* Returns predicted `trip_duration`
-* See `api/predict_api.py` for usage and sample request format
+Ensure your `pipeline` object (preprocessing + model) is correctly loaded inside the script.
+
+---
+
+### 📥 Request Schema
+
+The endpoint expects a JSON payload with the following fields:
+
+```json
+{
+  "pickup_datetime": "2025-01-15T08:45:00",
+  "vendor_id": 2,
+  "passenger_count": 1,
+  "pickup_longitude": -73.985428,
+  "pickup_latitude": 40.748817,
+  "dropoff_longitude": -73.985130,
+  "dropoff_latitude": 40.758896
+}
+```
+
+* `pickup_datetime` (ISO 8601): e.g., `"2025-01-15T08:45:00"`
+* `vendor_id`: 1 or 2
+* `passenger_count`: between 1 and 6
+* `pickup_latitude`, `pickup_longitude`, `dropoff_latitude`, `dropoff_longitude`: float values for location
+
+---
+
+### 🔄 Example Request (using `curl`)
+
+```bash
+curl -X POST http://127.0.0.1:8000/predict/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "pickup_datetime": "2025-01-15T08:45:00",
+    "vendor_id": 2,
+    "passenger_count": 1,
+    "pickup_longitude": -73.985428,
+    "pickup_latitude": 40.748817,
+    "dropoff_longitude": -73.985130,
+    "dropoff_latitude": 40.758896
+}'
+```
+
+---
+
+### 📤 Response Format
+
+```json
+{
+  "prediction": 9.37
+}
+```
+
+* `prediction`: Estimated trip duration in **minutes**, rounded to two decimal places
+* Internally, the model returns a log-transformed prediction which is exponentiated and converted to minutes before being returned.
+
+---
+
+### ⚠️ Error Handling
+
+If the input is invalid (e.g., missing fields or out-of-range values), the API responds with:
+
+```json
+{
+  "detail": "Error message explaining what went wrong"
+}
+```
 
 ---
 
