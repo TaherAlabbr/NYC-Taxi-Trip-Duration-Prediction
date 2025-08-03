@@ -130,15 +130,23 @@ NYC-Taxi-Trip-Duration/
 ```
 
 ---
-
 ## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/NYC-Taxi-Trip-Duration.git
+cd NYC-Taxi-Trip-Duration
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-* Python 3.9+ recommended
-* Models and preprocessing steps are version-locked for reproducibility
+Python 3.9 or later is required for full compatibility.
+All models and preprocessing steps are version-locked for reproducibility.
 
 ---
 
@@ -150,7 +158,7 @@ pip install -r requirements.txt
 * PyTorch (Neural Network + Ensemble)
 * matplotlib, seaborn (EDA)
 * haversine (geospatial distance)
-* Flask / FastAPI (API deployment)
+* FastAPI (API deployment)
 
 ---
 
