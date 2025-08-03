@@ -134,7 +134,11 @@ NYC-Taxi-Trip-Duration-Prediction/
 > However, it is fully **reproducible** using the command-line interface:
 >
 > ```bash
-> python scripts/trip_duration_train.py --model XGB --random-search --model-name final_xgb
+> python scripts/trip_duration_train.py \
+>   --model XGB \
+>   --xgb-n-estimators 137 \
+>   --xgb-max-depth 13 \
+>   --model-name final_xgb
 > ```
 
 
