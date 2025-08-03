@@ -62,7 +62,7 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 | Neural Network   | 0.747  | 0.390    | Competitive, less interpretable |
 | Ridge Regression | 0.689  | 0.433    | Strong linear baseline          |
 
-### 🎯 Final XGBoost Test Results:
+### Final XGBoost Test Results:
 
 | Dataset  | R² Score | RMSE  |
 | -------- | -------- | ----- |
