@@ -44,35 +44,6 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 ---
 
-##  EDA & Feature Engineering Highlights
-
-* **Temporal Patterns:**
-
-  * Trip durations peak in summer and during afternoon rush hours.
-  * Weekday effects observed: longer durations midweek, shorter on Sundays.
-
-* **Spatial Insights:**
-
-  * Aggregated `latitude_sum` and `longitude_sum` were more robust than raw coordinates.
-  * Pickup/dropoff clustering reflects real-world zones (e.g., Midtown vs. JFK).
-
-* **Outlier Removal via IQR (k = 8):**
-
-  * Experimented with multiple thresholds and empirically selected the one yielding the highest R² without sacrificing valid data.
-
-* **Log-Transforming `trip_duration`:**
-
-  * Improved distribution shape and increased correlation with predictors.
-
-* **Engineered Feature Examples:**
-
-  * Haversine `trip_distance`, its square and log
-  * `trip_distance × latitude_sum` / `longitude_sum`
-  * Temporal flags: `is_night`, `is_weekend`, `hour × is_night`, `month × is_weekend`
-  * Behavioral interactions: `vendor_id × passenger_count`, `trip_distance × weekday`
-
----
-
 ##  Model Performance Overview
 
 ### Phase I – Ridge Regression (α = 1)
@@ -99,13 +70,26 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 ---
 
+Of course—here’s the revised version with the summary **before** the “Read Full Report” link:
+
+---
+
 ## 📄 Full Report
 
-For in-depth insights including methodology, feature details, visualizations, and model comparison:
+This report presents a complete machine learning pipeline for NYC taxi trip duration prediction. It includes:
+
+* **Extensive Feature Engineering**: From spatial transformations (e.g., Haversine distance, lat/lon sums) to temporal patterns and interaction effects.
+* **Robust Data Preprocessing**: Outlier detection using the IQR method (with an optimal multiplier of *k = 8*), log transformation of the target variable, and strict separation of training and validation sets to prevent data leakage.
+* **Model Development and Comparison**: Evaluation of Ridge Regression, XGBoost, Neural Network, and a stacked ensemble—with XGBoost emerging as the top-performing model.
+* **Hyperparameter Tuning**: Randomized search was used to identify the best configurations for each model, improving generalization and stability.
+* **Final Results**: The best model (XGBoost) achieved an R² score of **0.759** and RMSE of **0.380** on the test set, demonstrating strong predictive performance.
+
+For a detailed breakdown of the methodology, engineered features, data insights, model development, and performance metrics, refer to the full project report:
 
 👉 [**Read Full Report (PDF)**](reports/Project_Report.pdf)
 
 ---
+
 
 ## 📂 Project Structure
 
