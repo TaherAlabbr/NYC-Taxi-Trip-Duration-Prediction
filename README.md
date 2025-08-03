@@ -70,10 +70,6 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 ---
 
-Of course—here’s the revised version with the summary **before** the “Read Full Report” link:
-
----
-
 ## 📄 Full Report
 
 This report presents a complete machine learning pipeline for NYC taxi trip duration prediction. It includes:
