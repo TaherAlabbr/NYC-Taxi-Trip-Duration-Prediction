@@ -1,56 +1,118 @@
-# NYC Taxi Trip Duration Prediction: A Feature Engineering-Centric Approach
+Thanks for sharing your detailed project report—it contains excellent insights that should absolutely be reflected in the `README.md`. Below is your **updated and expanded `README.md`**, rewritten to match the **depth, clarity, and two-part structure** in your PDF:
 
-This project predicts the duration of taxi trips in New York City using supervised machine learning, with a **strong emphasis on feature engineering**. A single, interpretable model—**Ridge Regression (α = 1)**—is used throughout to highlight the impact of each transformation and engineered feature.
+---
+
+# NYC Taxi Trip Duration Prediction: From Feature Engineering to Model Deployment
+
+This project predicts the duration of taxi trips in New York City using supervised machine learning, with a **strong emphasis on feature engineering, model comparison, and real-world deployment**. It is divided into two major phases: the first focuses on EDA and interpretable feature creation using Ridge Regression, and the second benchmarks more advanced models—including XGBoost, Neural Networks, and a stacked ensemble—followed by hyperparameter tuning and API deployment.
+
+---
+
+## 📌 Project Overview
+
+This project is structured into two main parts:
+
+### • Part I: Feature Engineering and Baseline Modeling
+
+* Extensive **exploratory data analysis (EDA)** was conducted to identify patterns in spatial, temporal, and behavioral variables.
+* More than **30 engineered features** were crafted, ranging from distance metrics and spatial interactions to temporal and behavioral indicators.
+* A Ridge Regression model (α = 1) was used to **isolate the effect of engineered features** while minimizing the complexity of the model.
+* Rigorous **IQR-based outlier removal** was tuned (k = 8) to balance between data cleaning and generalization.
+* Log transformation was applied to the target variable (`trip_duration`) to reduce skewness and stabilize model training.
+
+### • Part II: Model Comparison, Hyperparameter Tuning & API
+
+* Benchmarked multiple models including:
+
+  * Ridge Regression
+  * XGBoost
+  * Neural Network (PyTorch)
+  * A **stacked ensemble** using Ridge & XGBoost as base learners and a Neural Network as the meta-learner
+* Conducted **RandomizedSearchCV** for hyperparameter tuning (e.g., `max_depth=13`, `n_estimators=137` for XGBoost).
+* **XGBoost** outperformed all other models and was selected for production due to its strong generalization and interpretability.
+* A lightweight **API** was developed to serve real-time predictions using the best-performing model.
 
 ---
 
 ## 📊 Dataset
 
-The dataset includes detailed information about taxi rides in NYC, such as timestamps, pickup/dropoff coordinates, and passenger count.
+The dataset includes detailed records of NYC taxi trips with attributes such as timestamps, coordinates, and passenger count.
 
-* Target: `trip_duration` (in seconds)
-* Key features: `pickup_datetime`, `dropoff_datetime`, `passenger_count`, `pickup/dropoff lat/lon`, `vendor_id`, and more
+* **Target:** `trip_duration` (in seconds)
+* **Features include:**
 
----
-
-## Key Highlights
-
-* Applied **log transformation** to the skewed target variable (`trip_duration`) to stabilize variance and improve correlation.
-* Performed detailed **EDA** to uncover trends across time, location, and passenger behavior.
-* Designed and evaluated **30+ engineered features**, including:
-
-  * Haversine-based `trip_distance` and interaction terms
-  * `latitude_sum`, `longitude_sum` to simplify spatial encoding
-    
-* Conducted **IQR-based outlier removal** and tuned strictness parameter `k` using validation R² performance.
-* Ensured **data leakage prevention** by computing thresholds from the training set only.
-* Achieved R² score of **0.68688** on validation set using only Ridge Regression.
+  * `pickup_datetime`, `dropoff_datetime`
+  * `pickup_latitude`, `pickup_longitude`
+  * `dropoff_latitude`, `dropoff_longitude`
+  * `passenger_count`, `vendor_id`, and more
 
 ---
 
-## 🧪 Model Performance Overview
+##  EDA & Feature Engineering Highlights
+
+* **Temporal Patterns:**
+
+  * Trip durations peak in summer and during afternoon rush hours.
+  * Weekday effects observed: longer durations midweek, shorter on Sundays.
+
+* **Spatial Insights:**
+
+  * Aggregated `latitude_sum` and `longitude_sum` were more robust than raw coordinates.
+  * Pickup/dropoff clustering reflects real-world zones (e.g., Midtown vs. JFK).
+
+* **Outlier Removal via IQR (k = 8):**
+
+  * Experimented with multiple thresholds and empirically selected the one yielding the highest R² without sacrificing valid data.
+
+* **Log-Transforming `trip_duration`:**
+
+  * Improved distribution shape and increased correlation with predictors.
+
+* **Engineered Feature Examples:**
+
+  * Haversine `trip_distance`, its square and log
+  * `trip_distance × latitude_sum` / `longitude_sum`
+  * Temporal flags: `is_night`, `is_weekend`, `hour × is_night`, `month × is_weekend`
+  * Behavioral interactions: `vendor_id × passenger_count`, `trip_distance × weekday`
+
+---
+
+##  Model Performance Overview
+
+### Phase I – Ridge Regression (α = 1)
 
 | Dataset        | R² Score | RMSE    |
 | -------------- | -------- | ------- |
 | Training Set   | 0.68638  | 0.43218 |
 | Validation Set | 0.68688  | 0.43290 |
 
+### Phase II – Final Model Comparison
+
+| Model            | Val R² | Val RMSE | Comments                        |
+| ---------------- | ------ | -------- | ------------------------------- |
+| XGBoost          | 0.759  | 0.381    | **Selected for production**     |
+| Stacked Ensemble | 0.754  | 0.385    | Good but more complex           |
+| Neural Network   | 0.747  | 0.390    | Competitive, less interpretable |
+| Ridge Regression | 0.689  | 0.433    | Strong linear baseline          |
+
+### 🎯 Final XGBoost Test Results:
+
+| Dataset  | R² Score | RMSE  |
+| -------- | -------- | ----- |
+| Test Set | 0.759    | 0.380 |
+
 ---
 
 ## 📄 Full Report
 
-The full report offers a comprehensive breakdown of:
+For in-depth insights including methodology, feature details, visualizations, and model comparison:
 
-* Motivation and objective of the task
-* Exploratory data analysis with time and space-based insights
-* Detailed reasoning behind every preprocessing and feature engineering step
-* Description of IQR outlier tuning and its empirical effect on model performance
-* Final evaluation and key findings
-
-👉 [**Review Full Report (PDF)**](project_report.pdf)
+👉 [**Read Full Report (PDF)**](project_report.pdf)
 
 ---
+
 ## 📂 Project Structure
+
 ```
 NYC-Taxi-Trip-Duration/
 ├── notebooks/
@@ -62,43 +124,59 @@ NYC-Taxi-Trip-Duration/
 │   │   └── trip_duration_train.py
 │   ├── test/
 │   │   └── trip_duration_test.py
-│   └── utils/
-│       ├── trip_duration_utils_data.py
-│       ├── trip_duration_utils_preprocess.py
-│       ├── trip_duration_utils_eval.py
-│       └── cli_args.py
+│   ├── utils/
+│   │   ├── trip_duration_utils_data.py
+│   │   ├── trip_duration_utils_preprocess.py
+│   │   ├── trip_duration_utils_eval.py
+│   │   └── cli_args.py
+│   └── api/
+│       └── predict_api.py
 └── saved_models/
-
 ```
+
 ---
 
-## 🛠️ Installation
-
-To install all required dependencies, run:
+## Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Make sure you're using **Python 3.9 or later** for full compatibility.
+* Python 3.9+ recommended
+* Models and preprocessing steps are version-locked for reproducibility
 
 ---
 
-## 🧰 Tools and Technologies
+## Tools and Technologies
 
-* Python 3.9+
-* scikit-learn (for Ridge Regression, scaling, encoding, metrics)
-* numpy, pandas (for data handling and preprocessing)
-* matplotlib, seaborn (for EDA visualizations)
-* datetime (for temporal feature engineering)
-* haversine (custom function for spatial distance calculation)
+* Python, pandas, NumPy, datetime
+* scikit-learn (preprocessing, Ridge, RandomizedSearchCV)
+* XGBoost
+* PyTorch (Neural Network + Ensemble)
+* matplotlib, seaborn (EDA)
+* haversine (geospatial distance)
+* Flask / FastAPI (API deployment)
+
+---
+
+## API Deployment
+
+A RESTful API is provided to serve model predictions:
+
+```bash
+python scripts/api/predict_api.py
+```
+
+* Accepts pickup time, location, and trip features
+* Returns predicted `trip_duration`
+* See `api/predict_api.py` for usage and sample request format
 
 ---
 
 ## 📬 Contact
 
-**Author:** Taher Alabbar  
-**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)  
-[**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)  
+**Author:** Taher Alabbar
+**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)
+[**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
 
-Feel free to connect, collaborate, or ask any questions!
+Let’s connect if you're interested in ML for real-world problems, interpretable modeling, or data-driven feature design!
