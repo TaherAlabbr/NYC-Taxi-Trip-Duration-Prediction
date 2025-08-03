@@ -135,8 +135,8 @@ NYC-Taxi-Trip-Duration/
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/NYC-Taxi-Trip-Duration.git
-cd NYC-Taxi-Trip-Duration
+git clone https://github.com/your-username/NYC-Taxi-Trip-Duration-Prediction.git
+cd NYC-Taxi-Trip-Duration-Prediction
 ```
 
 Install dependencies:
