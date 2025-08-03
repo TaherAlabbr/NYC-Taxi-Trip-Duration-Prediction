@@ -1,7 +1,3 @@
-Thanks for sharing your detailed project report—it contains excellent insights that should absolutely be reflected in the `README.md`. Below is your **updated and expanded `README.md`**, rewritten to match the **depth, clarity, and two-part structure** in your PDF:
-
----
-
 # NYC Taxi Trip Duration Prediction: From Feature Engineering to Model Deployment
 
 This project predicts the duration of taxi trips in New York City using supervised machine learning, with a **strong emphasis on feature engineering, model comparison, and real-world deployment**. It is divided into two major phases: the first focuses on EDA and interpretable feature creation using Ridge Regression, and the second benchmarks more advanced models—including XGBoost, Neural Networks, and a stacked ensemble—followed by hyperparameter tuning and API deployment.
