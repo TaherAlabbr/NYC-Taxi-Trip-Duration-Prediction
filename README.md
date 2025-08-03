@@ -128,6 +128,7 @@ NYC-Taxi-Trip-Duration-Prediction/
 │   └── final-xgb.pkl  # not included in repo (31 MB — can be reproduced via CLI)
 ├── requirements.txt
 └── README.md
+```
 
 > ⚠️ **Note:** The final trained model (`final-xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
 > However, it is fully **reproducible** using the command-line interface:
@@ -136,8 +137,6 @@ NYC-Taxi-Trip-Duration-Prediction/
 > python scripts/trip_duration_train.py --model XGB --random-search --model-name final_xgb
 > ```
 
-
-```
 
 ---
 ## Installation
