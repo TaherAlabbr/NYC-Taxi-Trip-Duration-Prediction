@@ -91,27 +91,28 @@ For a detailed breakdown of the methodology, engineered features, data insights,
 
 ```
 NYC-Taxi-Trip-Duration-Prediction/
-├── notebooks/
+├── notebooks/                     # EDA and feature engineering notebooks
 │   └── trip_duration.ipynb
-├── reports/
+├── reports/                      # Project report and documentation
 │   └── project_report.pdf
-├── scripts/
+├── scripts/                      # Training, testing, and utility scripts
 │   ├── trip_duration_train.py
 │   ├── trip_duration_test.py
 │   ├── trip_duration_utils_data.py
 │   ├── trip_duration_utils_preprocess.py
 │   ├── trip_duration_utils_eval.py
 │   └── cli_args.py
-├── api/
+├── api/                         # API for model prediction
 │   └── predict_api.py
-├── saved_models/
-│   └── final-xgb.pkl  # not included in repo (31 MB — can be reproduced via CLI)
-├── requirements.txt
-└── README.md
+├── saved_models/                # Saved models (final model excluded due to size)
+│   └── final-xgb.pkl            #(can be reproduced via CLI)
+├── requirements.txt             # Dependencies
+└── README.md                   # Project overview and instructions
+
 ```
 
 > ⚠️ **Note:** The final trained model (`final-xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
-> However, it is fully **reproducible** using the command-line interface:
+> However, it is fully **reproducible** using the command-line interface: (31 MB — can be reproduced via CLI)
 >
 > ```bash
 > python scripts/trip_duration_train.py \
