@@ -103,7 +103,7 @@ The dataset includes detailed records of NYC taxi trips with attributes such as 
 
 For in-depth insights including methodology, feature details, visualizations, and model comparison:
 
-👉 [**Read Full Report (PDF)**](project_report.pdf)
+👉 [**Read Full Report (PDF)**](reports\project_report.pdf)
 
 ---
 
@@ -285,7 +285,7 @@ The endpoint expects a JSON payload with the following fields:
 
 ---
 
-### 🔄 Example Request (using `curl`)
+###  Example Request (using `curl`)
 
 ```bash
 curl -X POST http://127.0.0.1:8000/predict/ \
@@ -303,7 +303,7 @@ curl -X POST http://127.0.0.1:8000/predict/ \
 
 ---
 
-### 📤 Response Format
+###  Response Format
 
 ```json
 {
@@ -316,7 +316,7 @@ curl -X POST http://127.0.0.1:8000/predict/ \
 
 ---
 
-### ⚠️ Error Handling
+### Error Handling
 
 If the input is invalid (e.g., missing fields or out-of-range values), the API responds with:
 
@@ -328,10 +328,10 @@ If the input is invalid (e.g., missing fields or out-of-range values), the API r
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Author:** Taher Alabbar
-**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)
+**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)  
 [**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
 
 Let’s connect if you're interested in ML for real-world problems, interpretable modeling, or data-driven feature design!
