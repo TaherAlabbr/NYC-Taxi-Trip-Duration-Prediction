@@ -110,24 +110,33 @@ For in-depth insights including methodology, feature details, visualizations, an
 ## 📂 Project Structure
 
 ```
-NYC-Taxi-Trip-Duration/
+NYC-Taxi-Trip-Duration-Prediction/
 ├── notebooks/
 │   └── trip_duration.ipynb
 ├── reports/
 │   └── project_report.pdf
 ├── scripts/
-│   ├── train/
-│   │   └── trip_duration_train.py
-│   ├── test/
-│   │   └── trip_duration_test.py
-│   ├── utils/
-│   │   ├── trip_duration_utils_data.py
-│   │   ├── trip_duration_utils_preprocess.py
-│   │   ├── trip_duration_utils_eval.py
-│   │   └── cli_args.py
-│   └── api/
-│       └── predict_api.py
-└── saved_models/
+│   ├── trip_duration_train.py
+│   ├── trip_duration_test.py
+│   ├── trip_duration_utils_data.py
+│   ├── trip_duration_utils_preprocess.py
+│   ├── trip_duration_utils_eval.py
+│   └── cli_args.py
+├── api/
+│   └── predict_api.py
+├── saved_models/
+│   └── final-xgb.pkl  # not included in repo (31 MB — can be reproduced via CLI)
+├── requirements.txt
+└── README.md
+
+> ⚠️ **Note:** The final trained model (`final-xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
+> However, it is fully **reproducible** using the command-line interface:
+>
+> ```bash
+> python scripts/trip_duration_train.py --model XGB --random-search --model-name final_xgb
+> ```
+
+
 ```
 
 ---
@@ -148,6 +157,8 @@ pip install -r requirements.txt
 
 Python 3.9 or later is required for full compatibility.
 All models and preprocessing steps are version-locked for reproducibility.
+
+
 
 ---
 
