@@ -111,7 +111,7 @@ NYC-Taxi-Trip-Duration-Prediction/
 
 ```
 
-> ⚠️ **Note:** The final trained model (`final-xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
+> ⚠️ **Note:** The final trained model (`final_xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
 > However, it is fully **reproducible** using the command-line interface: (31 MB — can be reproduced via CLI)
 >
 > ```bash
