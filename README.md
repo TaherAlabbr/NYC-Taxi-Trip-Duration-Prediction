@@ -239,8 +239,6 @@ A RESTful API is provided to serve model predictions using the final XGBoost mod
 python api/predict_api.py
 ```
 
-Ensure your `pipeline` object (preprocessing + model) is correctly loaded inside the script.
-
 ---
 
 ### 📥 Request Schema
