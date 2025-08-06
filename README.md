@@ -309,8 +309,7 @@ If the input is invalid (e.g., missing fields or out-of-range values), the API r
 
 ## Contact
 
-**Author:** Taher Alabbar
-**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)  
+**Author:** Taher Alabbar  
+**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)    
 [**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
 
-Let’s connect if you're interested in ML for real-world problems, interpretable modeling, or data-driven feature design!
