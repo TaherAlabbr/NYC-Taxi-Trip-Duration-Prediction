@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument(
         '--load-dir',
         type=str,
-        default='saved_models/ridge_model.pkl',
+        default='../saved_models/ridge_model.pkl',
         help='Path to load a saved model for inference (default: %(default)s)'
     )
 
