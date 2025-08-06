@@ -22,7 +22,7 @@ This project is structured into two main parts:
 
   * Ridge Regression
   * XGBoost
-  * Neural Network (PyTorch)
+  * Neural Network
   * A **stacked ensemble** using Ridge & XGBoost as base learners and a Neural Network as the meta-learner
 * Conducted **RandomizedSearchCV** for hyperparameter tuning (e.g., `max_depth=13`, `n_estimators=137` for XGBoost).
 * **XGBoost** outperformed all other models and was selected for production due to its strong generalization and interpretability.
@@ -82,7 +82,7 @@ This report presents a complete machine learning pipeline for NYC taxi trip dura
 
 For a detailed breakdown of the methodology, engineered features, data insights, model development, and performance metrics, refer to the full project report:
 
-👉 [**Read Full Report (PDF)**](reports/Project_Report.pdf)
+👉 [**Read Full Report (PDF)**](summary/Project_Report.pdf)
 
 ---
 
@@ -91,23 +91,30 @@ For a detailed breakdown of the methodology, engineered features, data insights,
 
 ```
 NYC-Taxi-Trip-Duration-Prediction/
-├── notebooks/                     # EDA and feature engineering notebooks
+├── notebooks/                     # Exploratory data analysis and feature engineering notebooks
 │   └── trip_duration.ipynb
-├── reports/                      # Project report and documentation
+│
+├── summary/                      # Project summary
 │   └── project_report.pdf
-├── scripts/                      # Training, testing, and utility scripts
-│   ├── trip_duration_train.py
-│   ├── trip_duration_test.py
-│   ├── trip_duration_utils_data.py
-│   ├── trip_duration_utils_preprocess.py
-│   ├── trip_duration_utils_eval.py
-│   └── cli_args.py
-├── api/                         # API for model prediction
+│
+├── scripts/                      # Python scripts for training, testing, and preprocessing
+│   ├── trip_duration_train.py         # Model training pipeline
+│   ├── trip_duration_test.py          # Model evaluation script
+│
+│   ├── trip_duration_utils_data.py    # Data loading and cleaning utilities
+│   ├── trip_duration_utils_preprocess.py # Feature engineering and transformation
+│   ├── trip_duration_utils_eval.py    # Model evaluation metrics and helpers
+│   └── cli_args.py                    # Command-line argument definitions
+│
+├── api/                          # REST API for serving model predictions
 │   └── predict_api.py
-├── saved_models/                # Saved models (final model excluded due to size)
-│   └── final-xgb.pkl          
-├── requirements.txt             # Dependencies
-└── README.md                   # Project overview and instructions
+│
+├── saved_models/                 # Serialized models (final model excluded due to size)
+│   └── final_xgb.pkl
+│
+├── requirements.txt              # Python dependencies for reproducibility
+└── README.md                     # Project overview, instructions, and usage guide
+
 
 ```
 
