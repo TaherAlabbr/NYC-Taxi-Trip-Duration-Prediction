@@ -82,7 +82,7 @@ This report presents a complete machine learning pipeline for NYC taxi trip dura
 
 For a detailed breakdown of the methodology, engineered features, data insights, model development, and performance metrics, refer to the full project report:
 
-👉 [**Read Full Report (PDF)**](summary/Project_Report.pdf)
+👉 [**Read Full Report (PDF)**](summary/project_report.pdf)
 
 ---
 
