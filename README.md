@@ -310,6 +310,5 @@ If the input is invalid (e.g., missing fields or out-of-range values), the API r
 ## Contact
 
 **Author:** Taher Alabbar  
-**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com)    
-[**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
+**Email:** [t.alabbar.ca@gmail.com](mailto:t.alabbar.ca@gmail.com), [**LinkedIn**](https://www.linkedin.com/in/taher-alabbar/)
 
