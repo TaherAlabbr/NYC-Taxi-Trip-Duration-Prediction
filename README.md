@@ -109,7 +109,7 @@ NYC-Taxi-Trip-Duration-Prediction/
 ├── api/                          # REST API for serving model predictions
 │   └── predict_api.py
 │
-├── saved_models/                 # Serialized models (final model excluded due to size)
+├── saved_models/                 # Serialized models 
 │   └── final_xgb.pkl
 │
 ├── requirements.txt              # Python dependencies for reproducibility
@@ -117,18 +117,6 @@ NYC-Taxi-Trip-Duration-Prediction/
 
 
 ```
-
-> ⚠️ **Note:** The final trained model (`final_xgb.pkl`, ~31 MB) is **not included in the repository** due to GitHub's file size limitations.  
-> However, it is fully **reproducible** using the command-line interface: (31 MB — can be reproduced via CLI)
->
-> ```bash
-> python scripts/trip_duration_train.py \
->   --model XGB \
->   --xgb-n-estimators 137 \
->   --xgb-max-depth 13 \
->   --model-name final_xgb
-> ```
-
 
 ---
 ## Installation
